@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class ClassesEssenciais {
     public static void main(String[] args) {
-        String nome = null;
+        /*String nome = null;
         Integer idade = null;
         Double peso = null;
 
@@ -28,7 +28,10 @@ public class ClassesEssenciais {
 
         System.out.println("Nome: " + nome);
         System.out.println("Idade: " + idade);
-        System.out.println("Peso: " + peso);
+        System.out.println("Peso: " + peso);*/
+
+        StringBuilder stringBuilder = new StringBuilder("Bruno");
+        stringBuilder.append(" Monteiro Bonifácio");
     }
 
 }
