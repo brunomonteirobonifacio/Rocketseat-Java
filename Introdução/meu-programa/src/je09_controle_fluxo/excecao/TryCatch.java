@@ -7,38 +7,53 @@ public class TryCatch {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Digite seu nome: ");
-        String nome = input.next();
+        String nome;
+        do {
+            System.out.print("Digite seu nome: ");
+            nome = input.next();
+        } while (nome.equals(""));
 
         // java é foda hein
         if (input.hasNext()) {
             input.nextLine();
         }
 
-        System.out.print("Digite seu sobrenome: ");
-        String sobrenome = input.nextLine();
+        String sobrenome;
+        do {
+            System.out.print("Digite seu sobrenome: ");
+            sobrenome = input.nextLine();
+        } while (sobrenome.equals(""));
 
+        String nomeCompleto = nome.concat(" ").concat(sobrenome).toUpperCase();
+
+        int idade;
         while (true) {
             try {
                 System.out.print("Digite sua idade: ");
-                int idade = input.nextInt();
+                idade = input.nextInt();
 
                 break;
             } catch (InputMismatchException ime) {
-                System.out.println("Digite um número válido!");
                 input.next();
             }
         }
 
+        double altura;
         while (true) {
             try {
                 System.out.print("Digite sua altura: ");
-                double altura = input.nextDouble();
+                altura = input.nextDouble();
 
                 break;
             } catch (InputMismatchException ime) {
-                System.out.println("Digite um número válido!");
+                input.next();
             }
         }
+
+        System.out.println("Olá, me chamo " + nomeCompleto + "!");
+        System.out.println("Tenho " + idade + " anos");
+        System.out.println("Minha altura é " + altura + "m");
+
+        input.close();
     }
 }
