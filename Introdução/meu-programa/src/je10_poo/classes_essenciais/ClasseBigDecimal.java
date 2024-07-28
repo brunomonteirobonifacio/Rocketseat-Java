@@ -10,5 +10,8 @@ public class ClasseBigDecimal {
 
         BigDecimal valorAPagar = litrosUtilizados.multiply(precoLitro);
         System.out.println(valorAPagar);
+
+        BigDecimal valorAPagarArredondado = valorAPagar.setScale(2, RoundingMode.HALF_EVEN);
+        System.out.println(valorAPagarArredondado);
     }
 }
