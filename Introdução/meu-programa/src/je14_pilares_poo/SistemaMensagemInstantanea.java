@@ -1,17 +1,9 @@
 package je14_pilares_poo;
 
-public class SistemaMensagemInstantanea {
-    public void enviarMensagem() {
-        if (validarConectadoInternet()) {
-            System.out.println("Enviando mensagem");
-        } else {
-            System.out.println("Computador offline");
-        }
-    }
+public abstract class SistemaMensagemInstantanea {
+    public abstract void enviarMensagem();
 
-    public void receberMensagem() {
-        System.out.println("Recebendo mensagem");
-    }
+    public abstract void receberMensagem();
 
     private boolean validarConectadoInternet() {
         System.out.println("Validando comexão de internet");
