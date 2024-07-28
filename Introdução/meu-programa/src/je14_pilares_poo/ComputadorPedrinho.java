@@ -2,20 +2,19 @@ package je14_pilares_poo;
 
 public class ComputadorPedrinho {
     public static void main(String[] args) {
-        MSNMessenger msnMessenger = new MSNMessenger();
-        msnMessenger.enviarMensagem();
-        msnMessenger.receberMensagem();
+        ServicoMensagemInstantanea smi = null;
 
-        System.out.println();
+        String servicoEscolhido = "tlg";
 
-        FacebookMessenger fbMessenger = new FacebookMessenger();
-        fbMessenger.enviarMensagem();
-        fbMessenger.receberMensagem();
+        if (servicoEscolhido.equalsIgnoreCase("msn")) {
+            smi = new MSNMessenger();
+        } else if (servicoEscolhido.equalsIgnoreCase("fbm")) {
+            smi = new FacebookMessenger();
+        } else if (servicoEscolhido.equalsIgnoreCase("tlg")) {
+            smi = new Telegram();
+        }
 
-        System.out.println();
-
-        Telegram telegram = new Telegram();
-        telegram.enviarMensagem();
-        telegram.receberMensagem();
+        smi.enviarMensagem();
+        smi.receberMensagem();
     }
 }
