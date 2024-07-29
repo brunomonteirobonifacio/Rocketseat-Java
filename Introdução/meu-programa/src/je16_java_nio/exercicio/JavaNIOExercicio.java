@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class JavaNIOExercicio {
@@ -14,10 +15,7 @@ public class JavaNIOExercicio {
         Cliente reginaldo   = new Cliente("(21) 2705-6726", "Reginaldo Folly Barboza Brito");
         Cliente mariza      = new Cliente("(91) 2416-8455", "Mariza Gadelha Bastida Carneiro");
 
-        List<Cliente> clientes = new ArrayList<>();
-        clientes.add(joemia);
-        clientes.add(reginaldo);
-        clientes.add(mariza);
+        List<Cliente> clientes = new ArrayList<>(Arrays.asList(joemia, reginaldo, mariza));
 
         StringBuilder conteudo = new StringBuilder();
 
